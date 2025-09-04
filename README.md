@@ -1,3 +1,3 @@
 # portfolio
 
-"C:\Users\lenovo\Pictures\Screenshots\Screenshot 2025-09-04 224435.png"
+<img width="1364" height="763" alt="Image" src="https://github.com/user-attachments/assets/055261ef-f46e-4bca-aa5b-d4a5306f813a" />
