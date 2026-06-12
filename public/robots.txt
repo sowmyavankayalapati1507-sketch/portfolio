@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://sowmya.qzz.io/sitemap.xml
+Host: sowmya.qzz.io
