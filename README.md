@@ -1,37 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Sowmya Vankayalapati — Portfolio
 
-## Getting Started
+This repository contains the source for the personal portfolio site of Sowmya Vankayalapati built with Next.js. The site showcases projects, skills, and contact links and is optimized for search engines (SEO metadata and Google site verification are included).
 
-First, run the development server:
+Live demo: https://sowmya.qzz.io
+
+## Getting Started (local)
+
+Install dependencies and run the development server:
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build for production:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Environment
 
-To learn more about Next.js, take a look at the following resources:
+Create a production environment file `env.production` (not checked into git) with values such as:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+NEXT_PUBLIC_SITE_URL=https://sowmya.qzz.io
+GOOGLE_SITE_VERIFICATION=54Z5X_l3QEDarJzQc9pgpTGdrB0n-MwsARidbyHUd9o
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+This project can be deployed to many hosts. For a self-managed deployment using an Ubuntu EC2 instance, Nginx and Cloudflare Origin Certificates, see the full step-by-step guide in [DEPLOYMENT.md](DEPLOYMENT.md).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## SEO and verification
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Google site verification meta tags have been added to the app layout. Verify ownership in Google Search Console after deploying the site.
+- `public/robots.txt` and `public/sitemap.xml` are included to help crawlers discover your site.
+
+## Contributing
+
+Make changes locally, commit, and open a PR. To push directly, ensure you have access to this repo and follow the authentication steps (SSH or HTTPS) described in the project notes.
+
+## License
+
+See repository for license and additional notes.
 
