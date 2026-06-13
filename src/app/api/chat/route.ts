@@ -10,10 +10,21 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid message" }, { status: 400 });
     }
 
-    // Retrieve relevant context chunks
+    if (!process.env.HF_API_KEY) {
+      console.error("[Chat API] HF_API_KEY is not set");
+      return NextResponse.json(
+        {
+          answer:
+            "The AI assistant isn't configured yet. Please contact Sowmya directly at sowmyavankayalapati.1507@gmail.com 😊",
+        },
+        { status: 200 }
+      );
+    }
+
+    // Retrieve relevant context chunks (uses keyword fallback if embedding API fails)
     const context = await retrieveChunks(message, knowledgeBase, 3);
 
-    // Generate answer using Mistral via HuggingFace
+    // Generate answer using HuggingFace LLM
     const answer = await generateAnswer(message, context, systemPrompt);
 
     return NextResponse.json({ answer });
@@ -22,9 +33,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         answer:
-          "Sorry, I'm having trouble connecting right now. Please try again shortly or contact Sowmya directly at hello@sowmya.dev",
+          "I'm having a moment! 🤔 Please try again in a few seconds, or reach Sowmya directly at sowmyavankayalapati.1507@gmail.com",
       },
-      { status: 200 } // Return 200 so the frontend can display the fallback message
+      { status: 200 }
     );
   }
 }

@@ -1524,6 +1524,13 @@ a {
   flex-direction: column;
   overflow: hidden;
   transform-origin: bottom right;
+  z-index: 9999;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform-origin: bottom right;
 }
 
 .chat-header {
@@ -1790,7 +1797,7 @@ a {
   .profile-wrapper { width: 240px; height: 240px; }
   .hero-actions { justify-content: center; }
   .hero-social { justify-content: center; }
-  .hero-stats { justify-content: center; }
+  .hero-stats { justify-content: center; gap: 20px; }
   .hero-badge { margin-left: auto; margin-right: auto; }
   .float-badge { display: none; }
 
@@ -1798,21 +1805,98 @@ a {
   .contact-grid { grid-template-columns: 1fr; }
 
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; text-align: center; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
 
   .nav-links { display: none; }
   .mobile-menu-btn { display: flex; }
 
-  .chat-panel { width: 320px; }
+  /* Chat panel: fixed on mobile so it doesn't get cut off */
+  .chat-panel {
+    position: fixed;
+    bottom: 90px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+    height: 480px;
+    z-index: 1000;
+  }
 
   .section { padding: 70px 0; }
 
   .hero-name { letter-spacing: -1px; }
+
+  /* Make project cards full width on tablet */
+  .projects-grid { grid-template-columns: 1fr; }
+
+  /* Skills content padding on mobile */
+  .skills-content { padding: 24px 16px; }
+
+  /* Timeline: reduce left padding */
+  .timeline::before { left: 12px; }
+  .timeline-item { padding-left: 42px; }
+  .timeline-dot { left: 4px; }
+
+  /* Contact form padding */
+  .contact-form-wrapper { padding: 24px 20px; }
+
+  /* Hero stat numbers smaller */
+  .hero-stat-number { font-size: 1.4rem; }
 }
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
   .projects-grid { grid-template-columns: 1fr; }
   .certs-grid { grid-template-columns: 1fr; }
-  .chat-panel { width: calc(100vw - 40px); right: -8px; }
+
+  /* Chat panel full-width on small phones */
+  .chat-panel {
+    position: fixed;
+    bottom: 90px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    height: 460px;
+    z-index: 1000;
+  }
+
+  /* Chat widget button stays bottom-right */
+  .chat-widget { right: 16px; bottom: 16px; }
+
+  /* Smaller hero text */
+  .hero-name { font-size: clamp(2.2rem, 10vw, 3rem); }
+  .hero-bio { font-size: 1rem; }
+  .section-title { font-size: clamp(1.6rem, 7vw, 2rem); }
+
+  /* Stack hero actions vertically */
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Skill tabs wrap nicely */
+  .skills-tabs { gap: 6px; }
+  .tab-btn { padding: 8px 16px; font-size: 0.8rem; }
+
+  /* Project filter buttons */
+  .project-filters { gap: 6px; }
+  .filter-btn { padding: 6px 16px; font-size: 0.8rem; }
+
+  /* Timeline tweaks */
+  .timeline-content { padding: 18px 16px; }
+  .timeline-content h3 { font-size: 1rem; }
+
+  /* Cert cards */
+  .cert-card { padding: 18px 16px; }
+
+  /* Contact info cards */
+  .info-card-value { font-size: 0.82rem; word-break: break-all; }
+
+  /* Footer */
+  .footer-brand-logo { font-size: 1.3rem; }
 }
