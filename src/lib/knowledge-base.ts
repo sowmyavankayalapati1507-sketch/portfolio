@@ -148,7 +148,7 @@ export const knowledgeBase: KnowledgeChunk[] = [
     id: "faq-services",
     category: "faq",
     content:
-      "Sowmya offers freelance services: Web Development (₹15,000/project starting — HTML/CSS/JS frontend, Python Flask/FastAPI backend, REST API integration), AI Automation (₹35,000/project starting — custom LangChain/OpenAI workflows, multi-step AI agents, prompt engineering), Cloud & DevOps (₹20,000/project starting — Docker containerisation, AWS setup, CI/CD pipelines). Contact: sowmyavankayalapati.1507@gmail.com.",
+      "Sowmya is open to freelance projects in Web Development, AI Automation, and Cloud & DevOps. For project inquiries, contact her at sowmyavankayalapati.1507@gmail.com.",
   },
   {
     id: "faq-tech",
